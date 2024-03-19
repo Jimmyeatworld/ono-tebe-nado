@@ -1,31 +1,28 @@
 .header {
   display: flex;
   align-items: center;
-  width: 1052px;
-  height: 105px;
   margin: 92px auto 96px;
 }
 
 .header__links-list {
   /* список с ссылками меню */
   display: flex;
-  width: 391.5px;
-  height: 22px;
+  max-width: 391.5px;
   list-style-type: circle;
   gap: 33px;
-  margin-left: 26.5px;
+  margin-left: 52px;
   margin-right: 35px;
-  padding-top: 3px;
+  padding-top: 5px;
+}
+
+.link_underline {
+  padding-bottom: 1px;
+  border-bottom: 1.3px solid;
 }
 
 .header__links-list-item_no-bullit {
   /* ссылка без кружочка (элемент списка) */
   list-style-type: none;
-}
-
-.header__link_active {
-  /* ссылка без подчеркивания */
-  text-decoration: none;
 }
 
 .header__logo {
@@ -37,14 +34,14 @@
 .address {
   /* контейнер с адресом */
   font-style: normal; /* сбрасываем браузерный стиль у <address> */
-  width: 240.5px;
-  height: 98px;
+  max-width: 240.5px;
   line-height: 1.4;
+  padding-top: 2px;
 }
 
 .header__address {
   /* для выравнивания блока с адресом в шапке */
-  margin-left: 184px;
+  margin-left: 188px;
 }
 
 .cover {
@@ -52,23 +49,25 @@
   margin-bottom: 176px;
   background-image: url(../images/cover.jpg);
   background-size: cover;
-  z-index: 0;
+  background-position: center;
 }
 
 .overlay {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   inset: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 .cover__title {
+  position: relative;
   color: white;
   font-size: 100px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 29px;
   line-height: 1.22;
+  z-index: 2;
 }
 
 .letter-spacing-extended {
@@ -97,9 +96,11 @@
 
 .cover__description {
   /* контейнер для подзаголовка и кнопки */
+  position: relative;
   display: flex;
   align-items: center;
   padding: 125px 0 55px 78px;
+  z-index: 2;
 }
 
 .cover__description-text {
@@ -123,9 +124,8 @@
 } /* кнопка «Сделать ставку */
 
 .lots {
-  width: 1052px;
-  height: 692px;
   margin: 0 auto 146px;
+  padding: 2px 24px 0 24px;
 }
 
 .lots__heading {
@@ -163,58 +163,59 @@
   padding: 51px 40px 48px;
   color: white;
   height: 100%;
-  z-index: 0;
+  background-size: cover;
+  background-position: center;
 }
 
 /*фон для 1-карточек*/
 .card_type_film {
   background-image: url("../images/card-lot-01.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 /*фон для 2-й карточек*/
 .card_type_book {
   background-image: url("../images/card-lot-02.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 /*фон для 3-й карточек*/
 .card_type_picture {
   background-image: url("../images/card-lot-03.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 .card__title {
+  position: relative;
   text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 1.4px;
   text-transform: uppercase;
   font-size: 22px;
   font-weight: 700;
+  z-index: 2;
 }
 
 .card__text {
+  position: relative;
   font-size: 20px;
   line-height: 1.2;
+  z-index: 2;
 }
 
 .lots__look-more-link {
-  display: block;
-  padding-top: 30px;
-  padding-left: 40px;
+  display: inline-block;
+  max-width: 100%;
+  padding-top: 32px;
+  margin-left: 40px;
   font-size: 20px;
 }
 
 .about {
   display: grid;
-  width: 1052px;
-  height: 595px;
-  margin: 0 auto 180px;
-  grid-template-columns: 334px 1fr;
-  grid-template-rows: 240px 1fr;
+  margin: 0 auto 178px;
+  grid-template-columns: 334px 675px;
+  grid-template-rows: 240px 322px;
   column-gap: 25px;
-  padding-top: 35px;
+  padding-top: 31px;
+  padding-left: 24px;
 }
 
 .about__logo {
@@ -254,9 +255,8 @@
 
 .footer {
   display: flex;
-  width: 1000px;
-  height: 98px;
   margin: 0 auto 88px;
+  padding: 0 50px;
   justify-content: space-between;
 }
 
@@ -265,6 +265,7 @@
   flex-direction: column;
   list-style-type: none;
   align-items: center;
+  padding-top: 2px;
 }
 
 .footer__menu-link-active {
@@ -273,8 +274,13 @@
 
 .footer__social-list {
   display: flex;
-  width: 240px;
-  height: 48px;
+  gap: 48px;
   list-style-type: none;
   justify-content: space-between;
+}
+
+.footer__social-list-item {
+  /* контейнер для иконки */
+  width: 48px;
+  height: 48px;
 }
